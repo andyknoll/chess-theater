@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<html>
+
+<!-- 
+
+	index.html 
+	Andy Knoll
+	February 2019
+	
+    This is the main HTML file for the Chess Theater-V App.
+    
+    This HTML is presented here - in a more component-based app it would be
+    rendered by the UI components themselves.
+
+-->
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Chess Health coding test">
+    <meta name="author" content="Andy Knoll">
+	
+	<title>Chess Theater-V</title>
+	
+	<!-- app-specific CSS -->
+	<link href="css/app.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<div id="container" class="no-select">
+		<header>
+            <h1>Chess Theater-V Manager App</h1>
+		</header>
+
+		<nav id="main-menu">
+            <button class="button" id="menu-button-instr">Instructions</button>
+            <button class="button" id="menu-button-admin">Admin Console</button>
+            <button class="button button-disabled" id="menu-button-custs" disabled>Order Tickets</button>
+            <button class="button button-disabled" id="menu-button-reports" disabled>Sales Reports</button>
+        </nav>
+    
+		<main>
+            <!-- INSTRUCTIONS PANEL -->
+            <section class="panel panel-visible" id="instr-view">
+                <h2>Instructions</h2>
+                <p>
+                    Welcome to the Chess Health Theater-V Manager App.
+                </p>
+                <p>
+                    Theater-V is a five room theater showing selected classic movies based on USA Today ratings 
+                    and a few of Andy's personal favorites thrown in. You will use this Manager App
+                    to track ticket sales in real time throughout the day. Ticket sales for any screening may
+                    not exceed the capacity of the room in which the movie is being shown.
+                </p>
+                <p>
+                    Use the <b>Admin Console</b> to assign movies and seating capacities for the screening rooms.
+                    All Screening Rooms default to 100 seats but may be changed. 
+                    Once the settings are finalized they are used for the entire day at the theater.
+                    You may also simulate a day of sales using the Simulate Day button and view the report.
+                </p>
+                <p>
+                    Use the <b>Order Tickets</b> panel to order tickets for movies at certain show times. 
+                    Rather than repeatedly prompting for ticket sales as in a console-based app, this screen 
+                    will be used to fill user orders on demand and will enforce valid input and maximum seating capacities.
+                    Use the Simulate Order button to quickly and easily add new ticket orders.
+                </p>
+                <p>
+                    Use the <b>Sales Reports</b> panel to view the ticket sales at any time during the day.
+                    This displays the entire state of the Theater-V based on current settings and sales.
+                </p>
+                <p>
+                    For those software-types out there, this is a "micro-MVC" app which uses an HTML/CSS front end
+                    to update a JavaScript object model (screening rooms, times, movies) representing the 
+                    Theater-V state under the hood. The entire app and UI clocks in at under 25K minimized.
+                </p>
+                <br/>
+                <p>
+                    <h2>Good luck and sell those tickets!</h2>
+                </p>
+            </section>
+        
+
+            <!-- ADMIN PANEL -->
+            <section class="panel panel-hidden" id="admin-panel">
+                <h2>Admin Panel</h2>
+                <p>
+                    Please assign Movies and seating capacities for the various theater Screening Rooms.
+                    Only one movie may be assigned to any Screening Room (no simultaneous screenings) for the day.
+                </p>
+                <p>
+                    Once the <b>Accept Settings</b> button is clicked they cannot be 
+                    changed for today unless you refresh the app.
+                </p>
+
+                <br/>
+                Theater Room:<br/>
+                <select id="admin-select-screen"></select>
+
+                <br/><br/>
+                Seating Capacity:<br/>
+                <select id="admin-select-capacity"></select>
+                    
+                <br/><br/>
+                Movie to show:<br/>
+                <select id="admin-select-movie"></select>
+
+                <br/><br/>
+                <button class="button" id="admin-button-accept">Accept Settings</button>
+                <button class="button button-disabled" id="admin-button-sim" disabled>Simulate Day</button>
+            </section>
+
+
+            <!-- CUSTOMERS PANEL -->
+            <section class="panel panel-hidden" id="custs-panel">
+                <h2>Customers Panel</h2>
+                <p>Hello! Please select the movie, show time and number of tickets.</p>
+                <p>Press the <b>Submit</b> button to place your order - thank you!</p>
+
+                <br/>
+                Select Movie:<br/>
+                <select id="custs-select-movie"></select>
+
+                <br/><br/>
+                Select show time:<br/>
+                <select id="custs-select-time"></select>
+
+                <br/><br/>
+                Please enter number of tickets:<br/>
+                <p id="custs-tickets-rem"></p>
+                <input id="custs-input-tickets" type="number" min="1"></input>
+
+                <br/><br/>
+                <button class="button" id="custs-button-submit">Place Order</button>
+                <button class="button" id="custs-button-cancel">Cancel Order</button>
+                <button class="button" id="custs-button-sim">Simulate Order</button>
+            </section>
+
+
+            <!-- REPORTS PANEL -->
+            <section class="panel panel-hidden" id="report-panel">
+                <h2>Reports Panel</h2>
+                <div id="report-console"></div>
+            </section>
+        </main>
+
+		<footer>
+			<div id="copyright">&copy; 2019 Andy Knoll &nbsp;&nbsp; Theater-V Ops Manager &nbsp;&nbsp;</div>
+		</footer>
+	</div>
+
+    <!-- app-specific JS code - use minimized bundle if deploying -->
+    <!-- 
+	<script src="js/app-models.js"></script>
+	<script src="js/app-views.js"></script>
+	<script src="js/app-ctrls.js"></script>
+	<script src="js/admin-ctrl.js"></script>
+    <script src="js/custs-ctrl.js"></script>
+    <script src="js/app.js"></script>
+    -->
+    <script src="js/app.bundle.min.js"></script>
+
+</body>
+
+</html>
+

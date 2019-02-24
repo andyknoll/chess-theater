@@ -1,0 +1,118 @@
+/*****************************************************************************
+
+    app.css
+    Andy Knoll
+    February 2019
+
+	This is the main CSS file for the Chess Theater-V App.
+
+*****************************************************************************/
+
+html {
+    font-family: Arial;
+    font-size: 16px;
+    color: #246;
+    background-color: #ffffff;
+}
+
+h1 {
+    font-size: 1.5em;
+}
+
+h2 {
+    font-size: 1.25em;
+}
+
+#container {
+    max-width: 1000px;
+    min-width: 100px;
+    padding: 0px 20px;
+    margin: auto;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+/* HTML sections */
+
+header {
+    padding: 10px 0px;
+}
+
+nav {
+    padding: 0px 0px;
+}
+
+/* main holds the panels */
+main {
+    padding: 10px 10px;
+    overflow: hidden;
+}
+
+footer {
+    padding: 10px 0px;
+    font-size: .75em;
+    color: #999999;
+    text-align: right;
+}
+
+select, input {
+    font-size: 1.25em;
+    width: 220px;
+}
+
+.button {
+    display: inline-block;
+    width: 220px;
+    height: 50px;
+    font-size: 1em;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    border: 0px;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 1px black;
+}
+
+.button:hover {
+    background-color: #eeeeee;
+}
+
+.button-disabled {
+    background-color: #cccccc;
+}
+
+.button-disabled:hover {
+    background-color: #cccccc;
+}
+
+/* UI panels */
+
+.panel {
+    position: relative;
+    /*height: 300px;*/
+    border: 0px solid black;
+    visibility: hidden;
+    display: none;
+}
+
+.panel-visible {
+    visibility: visible;
+    display: block;
+}
+
+.panel-hidden {
+    visibility: hidden;
+    display: none;
+}
+
+#report-console {
+    background-color: #ffffff;
+    overflow-y: auto;
+    height: 400px;
+    font-size: 1em;
+    padding-left: 5px;
+}
+
+.report-big {
+    font-size: 1.25em;
+}
+
